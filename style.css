@@ -1,0 +1,262 @@
+/* Amit Roy: personal academic site */
+
+:root {
+  --ink: #222222;
+  --muted: #5f5f5f;
+  --accent: #4a1d24;      /* dark oxblood for headings and links */
+  --rule: #e4e1dc;
+  --bg: #ffffff;
+  --serif: Georgia, "Times New Roman", Times, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--rule);
+  z-index: 10;
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  font-size: 0.92rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus { color: var(--accent); }
+
+/* Headings and text */
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  color: var(--accent);
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin: 0 0 6px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 0 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 28px 0 10px;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+p { margin: 0 0 14px; }
+
+ul { padding-left: 20px; margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+
+section {
+  padding-top: 72px;
+  scroll-margin-top: 60px;
+}
+
+/* Intro */
+
+.intro { padding-top: 88px; }
+
+.lede {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.links span { color: var(--muted); margin: 0 6px; }
+
+/* Publication */
+
+.citation {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.documents {
+  list-style: none;
+  padding: 0;
+}
+
+.documents li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.filetype {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0 6px;
+  border-radius: 3px;
+}
+
+/* Projects */
+
+.entries {
+  list-style: none;
+  padding: 0;
+}
+
+.entries li { margin-bottom: 20px; }
+
+.entry-title {
+  display: block;
+  font-weight: 600;
+}
+
+.status {
+  font-weight: normal;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: 2px;
+}
+
+/* Experience and education */
+
+.item { margin-bottom: 24px; }
+
+.item-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 16px;
+}
+
+.item-head h3 { margin: 0 0 6px; }
+
+.dates {
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.item p { color: var(--muted); }
+
+/* Contact */
+
+.contact {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 24px;
+  margin: 0;
+}
+
+.contact dt { color: var(--muted); }
+.contact dd { margin: 0; overflow-wrap: anywhere; }
+
+/* Footer */
+
+.site-footer {
+  margin-top: 88px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Small screens */
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  h1 { font-size: 2.1rem; }
+  .site-header { position: static; }
+  section { padding-top: 56px; }
+  .intro { padding-top: 48px; }
+  .contact { grid-template-columns: 1fr; }
+  .contact dt { margin-top: 8px; }
+}
+
+/* Added: work titles, meta lines, compact lists */
+
+.work-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.item .meta { margin-bottom: 8px; }
+
+.entry-meta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.compact li { margin-bottom: 8px; }
